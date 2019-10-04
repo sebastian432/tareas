@@ -54,13 +54,13 @@ int main(){
 
 //invertir elementos
 
-void swap(int &x; int &y){
+
+void swap(int &x, int &y){
     int temp = x;
     x = y;
     y = temp;
 }
 
-}
 void swap(int *ptr1, int *ptr2){
         int temp = *ptr1;
         *ptr1=*ptr2;
@@ -69,12 +69,10 @@ void swap(int *ptr1, int *ptr2){
 int main(){
         int a=6;
         int b=13;
-
         int *ptr1 = &a;
         int *ptr2 = &b;
         swap(ptr1, ptr2);
         cout<<a<<" "<<b<<endl;
-
 }
 
 
