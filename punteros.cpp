@@ -55,24 +55,33 @@ int main(){
 //invertir elementos
 
 
-void swap(int &x, int &y){
-    int temp = x;
+void imprimir(int *arr, int tam)
+{
+    for(int i = 0; i < tam; i++)
+        cout << *(arr+i) << " ";
+cout << endl;
+}
+
+int swap(int &x, int &y){
+int temp = x;
     x = y;
     y = temp;
 }
 
-void swap(int *ptr1, int *ptr2){
-        int temp = *ptr1;
-        *ptr1=*ptr2;
-        *ptr2=temp;
+int invertir(int *arr, int tam)
+{
+    for(int i = 0; i < tam/2; i++){
+    swap(*(arr+i), *(arr+tam-1-i));
+    }
 }
-int main(){
-        int a=6;
-        int b=13;
-        int *ptr1 = &a;
-        int *ptr2 = &b;
-        swap(ptr1, ptr2);
-        cout<<a<<" "<<b<<endl;
+
+int main()
+{
+    int arr[4] = {1, 2, 3, 4};
+
+imprimir(arr, 4);
+invertir(arr, 4);
+imprimir(arr, 4);
 }
 
 
