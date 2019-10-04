@@ -153,6 +153,12 @@ int tam;
 
 //quicksort
 
+void imprimir(int *arr, int tam)
+{
+    for(int i = 0; i < tam; i++)
+        cout << *(arr+i) << " ";
+cout << endl;
+}
 int quicksort(int *arr,int inicio,int fin){
         int medio,i,j,piv,tam;
         medio=(inicio + fin)/2;
@@ -172,10 +178,8 @@ int quicksort(int *arr,int inicio,int fin){
             }
         }
         }
+
 }
-for(int i=0;i<tam;i++){
-            cout<<*(arr+i)<<endl;
-            }
 }
 int main(){
     int tam;
@@ -186,6 +190,7 @@ int main(){
         cout<<"ingrese los numeros del arreglo: ";
         cin>>x[i];
     }cout<<quicksort(x,0,tam-1)<<endl;
+    cout<<imprimir(x,tam)<<endl;
 }
 
 
