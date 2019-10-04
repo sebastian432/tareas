@@ -153,32 +153,30 @@ int tam;
 
 //quicksort
 
-int quicksort(int arr[],int inicio,int fin){
-        int medio,i,j,piv;
+int quicksort(int *arr,int inicio,int fin){
+        int medio,i,j,piv,tam;
         medio=(inicio + fin)/2;
         piv=arr[medio];
         i=inicio;
         j=fin;
         while(i<=j){
-            while(arr[i] < piv){
+            while(*(arr+i) < piv){
                 i++;
-
-            while(arr[j] > piv){
+            while(*(arr+j) > piv){
                 j++;
             if(i<=j){
-                int temp=arr[i];
-                arr[i]=arr[j];
-                arr[j]=temp;
+                int temp=*(arr+i);
+                *(arr+i)=*(arr+j);
+                *(arr+j)=temp;
                 j++;
             }
-
         }
         }
-
-
-
 }
-
+for(int i=0;i<tam;i++){
+            cout<<*(arr+i)<<endl;
+            }
+}
 int main(){
     int tam;
     cout<<"cuantos valores deseas?: ";
@@ -188,8 +186,6 @@ int main(){
         cout<<"ingrese los numeros del arreglo: ";
         cin>>x[i];
     }cout<<quicksort(x,0,tam-1)<<endl;
-
-
 }
 
 
