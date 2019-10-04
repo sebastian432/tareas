@@ -114,6 +114,39 @@ int main()
 
 //insertionsort
 
+int insertionsort(int *arr,int tam){
+            int pos,temp;
+
+            for(int i=0;i<tam;i++){
+                pos=i;
+                temp=*(arr+i);
+                while ((pos>0) && (*(arr+pos-1)>temp)){
+                    *(arr+pos)=*(arr+pos-1);
+                    pos--;
+                }
+                *(arr+pos)=temp;
+        }
+        for(int i=0;i<tam;i++){
+            cout<<*(arr+i)<<endl;
+
+
+            }
+
+}
+
+int main(){
+int tam;
+    cout<<"cuantos valores deseas?: ";
+    cin>>tam;
+    int x[tam];
+    for (int i=0;i<tam;i++){
+        cout<<"ingrese los numeros del arreglo: ";
+        cin>>x[i];
+    }cout<<insertionsort(x,tam)<<endl;
+}
+
+
+//quicksort
 
 
 
