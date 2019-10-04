@@ -80,7 +80,8 @@ int main(){
 
 
 //burbuja
-int burbuja(int *arr,int cant)
+
+void burbuja(int *arr,int cant)
 {   int i,j;
     for(i=0;i<cant-1;i++)
     {
@@ -91,24 +92,21 @@ int burbuja(int *arr,int cant)
                     *(arr+j)=*(arr+j+1);
                     *(arr+j+1)=temp;
                 }
-
         }
-
     }
     for(i=0;i<cant;i++)
     {
-
     cout<<"el ordenamiento es: "<<*(arr+i)<<endl;
-    return 0;
-}
 
+}
+}
 int main()
 {
     int arr[5]={2,5,4,9,6};
     int tam=5;
-    cout<<burbuja(arr,tam);
-
+    burbuja(arr,tam);
 }
+
 
 
 
