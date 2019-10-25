@@ -48,16 +48,20 @@ void invertir_rec(char *cadena,int tam,int i=0){
 
 //palindrome
 
-bool palindrome(char *cadena){
+bool palindrome(char *cadena,int tam){
             int i=0;
-            char *fin = cadena + tam_cad(cadena)-1-i;
-                for(i=0;cadena<fin;i++)
+            char *fin = cadena + tam -i;
+                for(int i=0;cadena<fin;i++)
                 {
                     if(*cadena!=*fin)
-
+                    {
                         return false;
-                    else
-                        return true;
+                    }
+                cadena++;
+                fin--;
+                tam--;
+                return true;
+
                 }
 }
 
@@ -73,22 +77,23 @@ bool pal_rec(char *cadena,int tam,int i=0){
                 else
                     pal_rec(++cadena,--tam,++i);
             }
+            return true;
 }
 int main(){
-        char cadena[]="anitalaalatin";
+        char cadena[]="arana";
 
-        char cadena1[]="anitalavalatina";
+        char cadena1[]="somos";
         int tam=tam_cad(cadena)-1;
         char *fin = cadena + tam_cad(cadena)-1;
-        
+
         cout<<tam_cad(cadena)<<endl;
         cout<<tam_rec(cadena)<<endl;
         invertir(cadena);
         cout<<cadena<<endl;
         invertir_rec(cadena,tam);
         cout<<cadena<<endl;
-        cout<<palindrome(cadena1)<<endl;
-        
+        cout<<palindrome(cadena,tam)<<endl;
+
         cout<<pal_rec(cadena,tam)<<endl;
 
 
