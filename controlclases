@@ -1,0 +1,97 @@
+#include <iostream>
+
+using namespace std;
+
+class Empleado
+{
+    private:
+            string nombre;
+            string apellido;
+            double salario;
+
+    public:
+            Empleado(string,string,double);
+            void Obtener_nombre();
+            void Obtener_apellido();
+            void Obtener_salario();
+            void Ordenamiento();
+};
+/*
+Empleado::Empleado()
+{
+
+}
+*/
+
+Empleado::Empleado(string _nombre, string _apellido, double _salario)
+{
+    nombre=_nombre;
+    apellido=_apellido;
+    salario=_salario;
+}
+
+
+void Empleado::Obtener_nombre()
+{
+    string nombre;
+    cout<<"Como te llamas? ";cin>>nombre;
+    cout<<"Tu nombre es: "<<nombre<<endl;
+    cout<<endl;
+}
+
+
+void Empleado::Obtener_apellido()
+{
+    string apellido;
+    cout<<"Cual es tu apellido? ";cin>>apellido;
+    cout<<"Tu apellido es: "<<apellido<<endl;
+    cout<<endl;
+}
+
+void Empleado::Obtener_salario()
+{
+    double salario;
+    double san;
+    double red;
+    double salario2;
+    cout<<"Cual es tu salario? "<<endl;cin>>salario;
+    if (salario<0){
+        salario=0;
+    }
+    cout<<"Tu salario es: "<<salario<<endl;
+    salario2=(10*salario)/100;
+    red=salario-salario2;
+    cout<<"Tu salario reducido en 10% es: "<<red<<endl;
+
+    san=(red*12);
+    cout<<"Tu salario anual es: "<<san<<endl;
+    cout<<endl;
+}
+
+
+void Empleado::Ordenamiento()
+{
+
+
+
+
+
+}
+
+int main()
+{
+    Empleado p1("nombre","apellido",46);
+    Empleado p2("nombre","apellido",46);
+    p1.Obtener_nombre();
+    p1.Obtener_apellido();
+    p1.Obtener_salario();
+
+    p2.Obtener_nombre();
+    p2.Obtener_apellido();
+    p2.Obtener_salario();
+
+
+return 0;
+}
+
+
