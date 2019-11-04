@@ -8,6 +8,8 @@ class Empleado
             string nombre;
             string apellido;
             double salario;
+
+
             Empleado(string,string,double);
             void Obtener_nombre();
             void Obtener_apellido();
@@ -66,6 +68,7 @@ int main()
     p2.Obtener_nombre();
     p2.Obtener_apellido();
     p2.Obtener_salario();
+
 
 
     return 0;
